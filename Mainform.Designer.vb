@@ -25,6 +25,9 @@ Partial Class Mainform
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mainform))
         Me.lst = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.tb = New System.Windows.Forms.TextBox()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
@@ -36,11 +39,8 @@ Partial Class Mainform
         Me.tsbDel = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbSave = New System.Windows.Forms.ToolStripButton()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.tsbView = New System.Windows.Forms.ToolStripDropDownButton()
         Me.LargerTextToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SmallerTextToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -63,10 +63,24 @@ Partial Class Mainform
         Me.lst.LargeImageList = Me.ImageList1
         Me.lst.Location = New System.Drawing.Point(0, 0)
         Me.lst.Name = "lst"
-        Me.lst.Size = New System.Drawing.Size(270, 425)
+        Me.lst.Size = New System.Drawing.Size(277, 444)
         Me.lst.TabIndex = 0
         Me.lst.UseCompatibleStateImageBehavior = False
         Me.lst.View = System.Windows.Forms.View.Tile
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Name"
+        Me.ColumnHeader1.Width = 200
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Modification date"
+        Me.ColumnHeader2.Width = 100
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Size (b)"
         '
         'ImageList1
         '
@@ -82,7 +96,7 @@ Partial Class Mainform
         Me.tb.Multiline = True
         Me.tb.Name = "tb"
         Me.tb.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.tb.Size = New System.Drawing.Size(449, 425)
+        Me.tb.Size = New System.Drawing.Size(461, 444)
         Me.tb.TabIndex = 1
         '
         'SplitContainer1
@@ -98,8 +112,8 @@ Partial Class Mainform
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.tb)
-        Me.SplitContainer1.Size = New System.Drawing.Size(723, 425)
-        Me.SplitContainer1.SplitterDistance = 270
+        Me.SplitContainer1.Size = New System.Drawing.Size(742, 444)
+        Me.SplitContainer1.SplitterDistance = 277
         Me.SplitContainer1.TabIndex = 2
         '
         'ToolStrip1
@@ -109,7 +123,7 @@ Partial Class Mainform
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbConnect, Me.tsbRefresh, Me.ToolStripSeparator1, Me.tsbNew, Me.tsbDel, Me.ToolStripSeparator2, Me.tsbSave, Me.ToolStripSeparator3, Me.ToolStripLabel1, Me.tsbView})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(723, 32)
+        Me.ToolStrip1.Size = New System.Drawing.Size(742, 32)
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -165,30 +179,16 @@ Partial Class Mainform
         Me.tsbSave.Size = New System.Drawing.Size(124, 29)
         Me.tsbSave.Text = "Save changes"
         '
-        'ColumnHeader1
+        'ToolStripSeparator3
         '
-        Me.ColumnHeader1.Text = "Name"
-        Me.ColumnHeader1.Width = 200
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Modification date"
-        Me.ColumnHeader2.Width = 100
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Size (b)"
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 32)
         '
         'ToolStripLabel1
         '
         Me.ToolStripLabel1.Name = "ToolStripLabel1"
         Me.ToolStripLabel1.Size = New System.Drawing.Size(21, 29)
         Me.ToolStripLabel1.Text = "   "
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 32)
         '
         'tsbView
         '
@@ -203,54 +203,54 @@ Partial Class Mainform
         '
         Me.LargerTextToolStripMenuItem.Image = CType(resources.GetObject("LargerTextToolStripMenuItem.Image"), System.Drawing.Image)
         Me.LargerTextToolStripMenuItem.Name = "LargerTextToolStripMenuItem"
-        Me.LargerTextToolStripMenuItem.Size = New System.Drawing.Size(166, 28)
+        Me.LargerTextToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
         Me.LargerTextToolStripMenuItem.Text = "Larger Text"
         '
         'SmallerTextToolStripMenuItem
         '
         Me.SmallerTextToolStripMenuItem.Image = CType(resources.GetObject("SmallerTextToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SmallerTextToolStripMenuItem.Name = "SmallerTextToolStripMenuItem"
-        Me.SmallerTextToolStripMenuItem.Size = New System.Drawing.Size(166, 28)
+        Me.SmallerTextToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
         Me.SmallerTextToolStripMenuItem.Text = "Smaller Text"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(163, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(157, 6)
         '
         'DetailsToolStripMenuItem
         '
         Me.DetailsToolStripMenuItem.Image = CType(resources.GetObject("DetailsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DetailsToolStripMenuItem.Name = "DetailsToolStripMenuItem"
-        Me.DetailsToolStripMenuItem.Size = New System.Drawing.Size(166, 28)
+        Me.DetailsToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
         Me.DetailsToolStripMenuItem.Text = "Details"
         '
         'TilesToolStripMenuItem
         '
         Me.TilesToolStripMenuItem.Image = CType(resources.GetObject("TilesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TilesToolStripMenuItem.Name = "TilesToolStripMenuItem"
-        Me.TilesToolStripMenuItem.Size = New System.Drawing.Size(166, 28)
+        Me.TilesToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
         Me.TilesToolStripMenuItem.Text = "Tiles"
         '
         'ListToolStripMenuItem
         '
         Me.ListToolStripMenuItem.Image = CType(resources.GetObject("ListToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ListToolStripMenuItem.Name = "ListToolStripMenuItem"
-        Me.ListToolStripMenuItem.Size = New System.Drawing.Size(166, 28)
+        Me.ListToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
         Me.ListToolStripMenuItem.Text = "List"
         '
         'IconsToolStripMenuItem
         '
         Me.IconsToolStripMenuItem.Image = CType(resources.GetObject("IconsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.IconsToolStripMenuItem.Name = "IconsToolStripMenuItem"
-        Me.IconsToolStripMenuItem.Size = New System.Drawing.Size(166, 28)
+        Me.IconsToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
         Me.IconsToolStripMenuItem.Text = "Icons"
         '
         'Mainform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(723, 457)
+        Me.ClientSize = New System.Drawing.Size(742, 476)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
