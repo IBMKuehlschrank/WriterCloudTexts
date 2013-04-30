@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -162,10 +162,10 @@
     <Content Include="..\..\..\..\Pictures\Icons\abiword.ico">
       <Link>abiword.ico</Link>
     </Content>
-    <Content Include="bin\Debug\DropNet.dll" />
-    <Content Include="bin\Debug\RestSharp.dll" />
-    <Content Include="bin\Debug\WriterCloudTexts.exe" />
-    <Content Include="bin\Debug\WriterCloudTexts.pdb" />
+    <Content Include="publish\DropNet.dll" />
+    <Content Include="publish\RestSharp.dll" />
+    <Content Include="publish\WriterCloudTexts.exe" />
+    <Content Include="publish\WriterCloudTexts.pdb" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
