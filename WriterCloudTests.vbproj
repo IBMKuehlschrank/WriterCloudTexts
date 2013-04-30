@@ -162,6 +162,10 @@
     <Content Include="..\..\..\..\Pictures\Icons\abiword.ico">
       <Link>abiword.ico</Link>
     </Content>
+    <Content Include="bin\Debug\DropNet.dll" />
+    <Content Include="bin\Debug\RestSharp.dll" />
+    <Content Include="bin\Debug\WriterCloudTexts.exe" />
+    <Content Include="bin\Debug\WriterCloudTexts.pdb" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
