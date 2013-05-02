@@ -18,17 +18,20 @@ Public Class Mainform
 
     Private Sub Mainform_Load(sender As Object, e As EventArgs) Handles Me.Load
         Do
-            K = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\WriterCloudTexts", True)
+            'K = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\WriterCloudTexts", True)
+            'Dim Crypt As New XMLConfigbase.Encrypt()
+            'frmAuth.TokenStore.getInstance().Save(Crypt.Decrypt(K.GetValue("T")), Crypt.Decrypt(K.GetValue("S")))
+
             If sender Is Nothing Or (K Is Nothing OrElse K.GetValue("T", Nothing) Is Nothing) Then
                 Dim f As New frmAuth()
                 f.ShowDialog()
                 sender = Me
             Else
                 Me.Cursor = Cursors.WaitCursor
-                Dim Crypt As New XMLConfigbase.Encrypt()
-                Dim Usertoken As String = Crypt.Decrypt(K.GetValue("T"))
-                Dim UserSec As String = Crypt.Decrypt(K.GetValue("S"))
-                dp = New DropNet.DropNetClient("udtp4214kkbj26t", "o4lzkxuj1i0vzxx", Usertoken, UserSec)
+                Dim Usertoken As String = frmAuth.TokenStore.getInstance().Token
+                Dim UserSec As String = frmAuth.TokenStore.getInstance().Secret
+                ' You need to have these two ressources configured. They are not checked in with GIT.
+                dp = New DropNet.DropNetClient(My.Resources.DropBoxAPIKEy, My.Resources.DropBoxAPISecret, Usertoken, UserSec)
                 tsbRefresh_Click(Nothing, Nothing)
                 Me.Cursor = Cursors.Default
 
@@ -140,7 +143,10 @@ Public Class Mainform
     End Sub
 
     Private Sub tsbDel_Click(sender As Object, e As EventArgs) Handles tsbDel.Click
-        If lst.SelectedItems.Count = 1 Then dp.Delete(CType(lst.SelectedItems(0), LI).DropboxPath)
+        If lst.SelectedItems.Count = 1 Then
+            dp.Delete(CType(lst.SelectedItems(0), LI).DropboxPath)
+            tsbRefresh_Click(Nothing, Nothing)
+        End If
     End Sub
 
     Private Sub tsbNew_Click(sender As Object, e As EventArgs) Handles tsbNew.Click
@@ -149,6 +155,7 @@ Public Class Mainform
         If ip.EndsWith(".txt") = False Then ip &= ".txt"
         dp.UploadFile("/", ip, New Byte() {})
         Cursor = Cursors.Default
+        tsbRefresh_Click(Nothing, Nothing)
     End Sub
 
 
@@ -169,5 +176,16 @@ Public Class Mainform
         End Select
         K.SetValue("V", lst.View.ToString)
         K.SetValue("Fs", tb.Font.Size)
+    End Sub
+
+    Private Sub tsbExport_Click(sender As Object, e As EventArgs) Handles tsbExport.Click
+        Dim f As New SaveFileDialog()
+        f.Filter = "Text files (.txt)|*.txt|*.*|*.*"
+        f.DefaultExt = ".txt"
+        If lst.SelectedItems.Count = 1 AndAlso f.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            Dim fw As New IO.StreamWriter(New IO.FileStream(f.FileName, IO.FileMode.Create, IO.FileAccess.Write, IO.FileShare.None))
+            fw.Write(tb.Text)
+            fw.Close()
+        End If
     End Sub
 End Class

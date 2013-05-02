@@ -166,10 +166,6 @@
     <Content Include="bin\Debug\RestSharp.dll" />
     <Content Include="bin\Debug\WriterCloudTexts.exe" />
     <Content Include="bin\Debug\WriterCloudTexts.pdb" />
-    <Content Include="publish\DropNet.dll" />
-    <Content Include="publish\RestSharp.dll" />
-    <Content Include="publish\WriterCloudTexts.exe" />
-    <Content Include="publish\WriterCloudTexts.pdb" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

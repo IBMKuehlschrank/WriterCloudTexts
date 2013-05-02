@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>If you want to use WriterCloudTexts on your DropBox texts, you need to login with your DropBox credentials and give WriterCloudTexts permission to access your DropBox.
+In order to do so, please click the button below. It will open a browser with a DropBox App-Request-Login for you.</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>Once you have authorized WriterCloudTexts or DropBox in your webbrowser, click the next button to associate WriterCloudTexts with your DropBox account.
+This will save an encrypted account token on your computer and you will be able to access your DropBox documents with WriterCloudTexts at any time.
+</value>
+  </data>
 </root>

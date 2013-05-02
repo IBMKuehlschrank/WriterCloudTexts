@@ -22,142 +22,81 @@ Partial Class frmAuth
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.tburl = New System.Windows.Forms.TextBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.tbtoken = New System.Windows.Forms.TextBox()
-        Me.tbsecrret = New System.Windows.Forms.TextBox()
-        Me.btnSaveToken = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAuth))
+        Me.btnStep2Assoc = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnStep1BrowseAuthRequest = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lbl = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Button1
+        'btnStep2Assoc
         '
-        Me.Button1.Location = New System.Drawing.Point(17, 20)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(230, 38)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "(1) Get URL"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnStep2Assoc.Location = New System.Drawing.Point(15, 283)
+        Me.btnStep2Assoc.Name = "btnStep2Assoc"
+        Me.btnStep2Assoc.Size = New System.Drawing.Size(457, 46)
+        Me.btnStep2Assoc.TabIndex = 2
+        Me.btnStep2Assoc.Text = "Associate account and store the token"
+        Me.btnStep2Assoc.UseVisualStyleBackColor = True
         '
-        'tburl
+        'Label6
         '
-        Me.tburl.Location = New System.Drawing.Point(20, 70)
-        Me.tburl.Name = "tburl"
-        Me.tburl.Size = New System.Drawing.Size(250, 22)
-        Me.tburl.TabIndex = 1
+        Me.Label6.AutoEllipsis = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(12, 9)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(511, 104)
+        Me.Label6.TabIndex = 9
+        Me.Label6.Text = resources.GetString("Label6.Text")
         '
-        'Button3
+        'btnStep1BrowseAuthRequest
         '
-        Me.Button3.Location = New System.Drawing.Point(20, 170)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(227, 46)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "(2) Get the account access token"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnStep1BrowseAuthRequest.Location = New System.Drawing.Point(15, 116)
+        Me.btnStep1BrowseAuthRequest.Name = "btnStep1BrowseAuthRequest"
+        Me.btnStep1BrowseAuthRequest.Size = New System.Drawing.Size(457, 38)
+        Me.btnStep1BrowseAuthRequest.TabIndex = 10
+        Me.btnStep1BrowseAuthRequest.Text = "Open browser with DropBox authentication request"
+        Me.btnStep1BrowseAuthRequest.UseVisualStyleBackColor = True
         '
-        'Label1
+        'Label7
         '
-        Me.Label1.Location = New System.Drawing.Point(14, 95)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(256, 72)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Launch URL in browser, login and authorize the App to your account. Then click th" & _
-    "e next button"
+        Me.Label7.AutoEllipsis = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(12, 177)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(511, 104)
+        Me.Label7.TabIndex = 9
+        Me.Label7.Text = resources.GetString("Label7.Text")
         '
-        'Label2
+        'lbl
         '
-        Me.Label2.Location = New System.Drawing.Point(22, 219)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(225, 55)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Now the following can be used to login with this App to your account:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(22, 287)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 17)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Token:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(22, 312)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 17)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Secret:"
-        '
-        'tbtoken
-        '
-        Me.tbtoken.Location = New System.Drawing.Point(80, 284)
-        Me.tbtoken.Name = "tbtoken"
-        Me.tbtoken.Size = New System.Drawing.Size(166, 22)
-        Me.tbtoken.TabIndex = 6
-        '
-        'tbsecrret
-        '
-        Me.tbsecrret.Location = New System.Drawing.Point(81, 309)
-        Me.tbsecrret.Name = "tbsecrret"
-        Me.tbsecrret.Size = New System.Drawing.Size(166, 22)
-        Me.tbsecrret.TabIndex = 6
-        '
-        'btnSaveToken
-        '
-        Me.btnSaveToken.Location = New System.Drawing.Point(20, 385)
-        Me.btnSaveToken.Name = "btnSaveToken"
-        Me.btnSaveToken.Size = New System.Drawing.Size(226, 33)
-        Me.btnSaveToken.TabIndex = 7
-        Me.btnSaveToken.Text = "(3) Save Token"
-        Me.btnSaveToken.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.Location = New System.Drawing.Point(22, 344)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(248, 34)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Click save to store them (encrypted) on your PC."
+        Me.lbl.AutoEllipsis = True
+        Me.lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl.Location = New System.Drawing.Point(12, 351)
+        Me.lbl.Name = "lbl"
+        Me.lbl.Size = New System.Drawing.Size(499, 23)
+        Me.lbl.TabIndex = 11
         '
         'frmAuth
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(282, 435)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.btnSaveToken)
-        Me.Controls.Add(Me.tbsecrret)
-        Me.Controls.Add(Me.tbtoken)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.tburl)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(523, 378)
+        Me.Controls.Add(Me.lbl)
+        Me.Controls.Add(Me.btnStep1BrowseAuthRequest)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.btnStep2Assoc)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmAuth"
         Me.Text = "Authenticate account"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents tburl As System.Windows.Forms.TextBox
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents tbtoken As System.Windows.Forms.TextBox
-    Friend WithEvents tbsecrret As System.Windows.Forms.TextBox
-    Friend WithEvents btnSaveToken As System.Windows.Forms.Button
-    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents btnStep2Assoc As System.Windows.Forms.Button
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents btnStep1BrowseAuthRequest As System.Windows.Forms.Button
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents lbl As System.Windows.Forms.Label
 
 End Class

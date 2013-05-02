@@ -49,6 +49,8 @@ Partial Class Mainform
         Me.TilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IconsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsbExport = New System.Windows.Forms.ToolStripButton()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -120,7 +122,7 @@ Partial Class Mainform
         '
         Me.ToolStrip1.AutoSize = False
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(22, 22)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbConnect, Me.tsbRefresh, Me.ToolStripSeparator1, Me.tsbNew, Me.tsbDel, Me.ToolStripSeparator2, Me.tsbSave, Me.ToolStripSeparator3, Me.ToolStripLabel1, Me.tsbView})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbConnect, Me.tsbRefresh, Me.ToolStripSeparator1, Me.tsbNew, Me.tsbDel, Me.ToolStripSeparator2, Me.tsbSave, Me.ToolStripSeparator3, Me.ToolStripLabel1, Me.tsbView, Me.ToolStripSeparator4, Me.tsbExport})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(742, 32)
@@ -142,8 +144,8 @@ Partial Class Mainform
         Me.tsbRefresh.Image = CType(resources.GetObject("tsbRefresh.Image"), System.Drawing.Image)
         Me.tsbRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbRefresh.Name = "tsbRefresh"
-        Me.tsbRefresh.Size = New System.Drawing.Size(84, 29)
-        Me.tsbRefresh.Text = "Refresh"
+        Me.tsbRefresh.Size = New System.Drawing.Size(26, 29)
+        Me.tsbRefresh.ToolTipText = "Refresh list"
         '
         'ToolStripSeparator1
         '
@@ -176,8 +178,9 @@ Partial Class Mainform
         Me.tsbSave.Image = CType(resources.GetObject("tsbSave.Image"), System.Drawing.Image)
         Me.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbSave.Name = "tsbSave"
-        Me.tsbSave.Size = New System.Drawing.Size(124, 29)
-        Me.tsbSave.Text = "Save changes"
+        Me.tsbSave.Size = New System.Drawing.Size(66, 29)
+        Me.tsbSave.Text = "Save"
+        Me.tsbSave.ToolTipText = "Save changes (of current doc in dropbox)"
         '
         'ToolStripSeparator3
         '
@@ -246,6 +249,20 @@ Partial Class Mainform
         Me.IconsToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
         Me.IconsToolStripMenuItem.Text = "Icons"
         '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 32)
+        '
+        'tsbExport
+        '
+        Me.tsbExport.Image = CType(resources.GetObject("tsbExport.Image"), System.Drawing.Image)
+        Me.tsbExport.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbExport.Name = "tsbExport"
+        Me.tsbExport.Size = New System.Drawing.Size(78, 29)
+        Me.tsbExport.Text = "Export"
+        Me.tsbExport.ToolTipText = "Save contents as Text-File on this computer"
+        '
         'Mainform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -291,4 +308,6 @@ Partial Class Mainform
     Friend WithEvents TilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents IconsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents tsbExport As System.Windows.Forms.ToolStripButton
 End Class
