@@ -1,6 +1,5 @@
 ﻿Imports DropNet, DropNet.Models
 Public Class Mainform
-
     Private dp As DropNet.DropNetClient
     Private K As Microsoft.Win32.RegistryKey
 
@@ -18,11 +17,11 @@ Public Class Mainform
 
     Private Sub Mainform_Load(sender As Object, e As EventArgs) Handles Me.Load
         Do
-            'K = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\WriterCloudTexts", True)
+            K = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\WriterCloudTexts", True)
             'Dim Crypt As New XMLConfigbase.Encrypt()
             'frmAuth.TokenStore.getInstance().Save(Crypt.Decrypt(K.GetValue("T")), Crypt.Decrypt(K.GetValue("S")))
 
-            If sender Is Nothing Or (K Is Nothing OrElse K.GetValue("T", Nothing) Is Nothing) Then
+            If sender Is Nothing Or (frmAuth.TokenStore.getInstance().Token.Length = 0) Then
                 Dim f As New frmAuth()
                 f.ShowDialog()
                 sender = Me
